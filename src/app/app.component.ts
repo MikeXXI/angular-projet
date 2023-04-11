@@ -11,7 +11,7 @@ export class AppComponent implements OnInit{
   search: string = '';
   title: string = '';
   nameTriDate: string = '';
-  nameTriName: string = '';
+  nameTriName: string = 'ascName';
   afficherFavori: boolean = false;
   nameButtonFav = "Afficher les favoris";
 
@@ -19,6 +19,7 @@ export class AppComponent implements OnInit{
   constructor(private productsService: ProductsService) { }
 
   triDate(e:any){
+    console.log("handle date");
         this.nameTriDate  = e.target.value;
         console.log(e.target.value);
       }
@@ -40,11 +41,7 @@ export class AppComponent implements OnInit{
     }
     }
   ngOnInit(){
-    this.search = ""
     this.products = this.productsService.getAllProducts(); 
-    this.title = "My Store"
-    this.nameTriDate = ""
-    this.nameTriName = ""
   }
 
   

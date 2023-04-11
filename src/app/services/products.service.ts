@@ -47,7 +47,59 @@ export class ProductsService {
       new Date("03/03/2023"),
       [{ size: "S", price: 30 }, { size: "M", price: 50 }, { size: "L", price: 70 }]
 
-    )
+    ),
+    new Product(
+     4 ,
+      'Thresh',
+      "ouahhhhh !",
+      'https://ae01.alicdn.com/kf/S5e686f1a580d473d96a89b9fa0462727a/Funko-Pop-Mech-Strike-hunter-Doctor-Doom-990-Funko.jpg_Q90.jpg_.webp',
+      103,
+      15,
+      true,
+      false,
+      new Date("12/03/2023"),
+      [{ size: "S", price: 50 }, { size: "M", price: 80 }, { size: "L", price: 100 }]
+
+    ),
+    new Product(
+      5,
+      'Mushu',
+      "Le dragon de l'année",
+      'https://boutique.plushtoy.fr/WebRoot/ce_fr/Shops/186372/62BA/B896/74C3/15F4/FFBE/C0A8/190D/5EA6/pop-disney-mulan-mushu-xl-10inch.jpg',
+      8000,
+      12,
+      true,
+      false,
+      new Date("04/25/2023"),
+      [{ size: "S", price: 30 }, { size: "M", price: 50 }, { size: "L", price: 70 }]
+
+    ),
+    new Product(
+      6,
+      'Harry Potter',
+      "Le sorcier le plus célèbre de tous les temps",
+      'https://www.lamarquezone.fr/images/Image/funko-harry-potter-world-cup-120-48563.jpeg',
+      103,
+      15,
+      false,
+      false,
+      new Date("06/12/2023"),
+      [{ size: "S", price: 30 }, { size: "M", price: 50 }, { size: "L", price: 70 }]
+
+    ),
+    new Product(
+      7 ,
+       'Tanjiro',
+       "Le meilleur des démons slayers",
+       'https://www.dracaugames.com/11282-product_hd/funko-pop-animation-demon-slayer-867-tanjiro-kamado.jpg',
+       202,
+       1000,
+       true,
+       true,
+       new Date("09/09/2023"),
+       [{ size: "S", price: 50 }, { size: "M", price: 80 }, { size: "L", price: 100 }]
+ 
+     )
   ];
 
   getAllProducts(): Product[] {

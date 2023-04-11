@@ -1,27 +1,30 @@
 <!-- Toolbar -->
-<div class="toolbar" role="banner">
-  <img width="250" alt="Angular Logo"
-    src="https://img.freepik.com/free-psd/3d-lion-logo-mockup_145275-144.jpg?w=1380&t=st=1681162955~exp=1681163555~hmac=e04cd1fcd2ea240fb97eb60eb731839f48632bf3e644e4f4ac466c4ec54b2cf8" />
+<div class="toolbar" >
+  <img width="250" alt="Logo Funko"
+    src="https://static.vecteezy.com/system/resources/previews/011/098/640/non_2x/flat-shop-illustration-design-on-transparent-background-free-png.png" />
   <h1>Funko POP SHOT</h1>
-  <div class="spacer"></div>
 </div>
 
 <div class="content" role="main">
-  <div>
-    <input type="text" id="search" name="search" [(ngModel)]="search" placeholder="Chercher"/>
+  <div class="navbar">
+    <input type="text" id="search" name="search" [(ngModel)]="search" placeholder="Chercher" />
     <select (change)="triDate($event)">
+      <option disabled selected value="">Date </option>
       <option value="asc">Date Ascendant</option>
       <option value="desc">Date Descendant</option>
     </select>
     <select (change)="triName($event)">
+      <option disabled selected value="">Nom </option>
       <option value="ascName">Nom Ascendant</option>
       <option value="descName">Nom Descendant</option>
     </select>
     <button (click)="lookFavori()">{{nameButtonFav}}</button>
   </div>
-  
-  <app-product-card *ngFor="let product of (products | sortByDate: nameTriDate | searchProduct: search | filterName: nameTriName )"
-    [myProduct]="product"></app-product-card>
+  <div class="card-container">
+    <app-product-card
+      *ngFor="let product of (products | sortByDate: nameTriDate | searchProduct: search | filterName: nameTriName )"
+      [myProduct]="product"></app-product-card>
+  </div>
 
 </div>
 <router-outlet></router-outlet>

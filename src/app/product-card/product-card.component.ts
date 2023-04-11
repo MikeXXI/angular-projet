@@ -7,15 +7,17 @@ import { ProductsService } from '../services/products.service';
   templateUrl: './product-card.component.html',
   styleUrls: ['./product-card.component.css']
 })
-export class ProductCardComponent{
+export class ProductCardComponent implements OnInit{
   @Input() myProduct!: Product;
-  nameButtonAddLike = "Ajouter aux favoris";
-  
-  
+   
+  selected = 0;     
 
   constructor(private productsService: ProductsService) { }
-      
-      selected = 0;      
+
+  ngOnInit(): void {
+    this.selected = (this.myProduct.sizes && this.myProduct.sizes.length > 0) ? this.myProduct.sizes[0].price : 0;
+  }
+       
       changePrice(e:any){
         this.selected = e.target.value;
         console.log(e.target.value);

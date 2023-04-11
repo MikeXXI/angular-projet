@@ -1,15 +1,17 @@
-<h2>{{myProduct.title | uppercase}}</h2>
-<select *ngIf="myProduct.sizes" (change)="changePrice($event)">
-  <option *ngFor="let size of myProduct.sizes" [value]="size.price">{{ size.size }} </option>
-</select>
-<img width="300" src={{myProduct.imageUrl}}>
-<p>{{myProduct.description}}</p>
-<p>{{selected | currency:'EUR'}} Date: {{myProduct.dateAdded | date:'fullDate' }}</p>
-<b [ngStyle]="{ color: myProduct.isLiked ? 'red' : 'black' }">{{myProduct.likes}} ♥ </b>
-<button (click)="onAddLike()">Like</button>
-<button *ngIf="!myProduct.isFavorite" (click)="onAddFavori()">Ajouter au favoris
-</button>
-<button *ngIf="myProduct.isFavorite" (click)="onAddFavori()">Enlever des favori</button>
-<p>
-  <b *ngIf="myProduct.isFavorite">Ce produit est dans tes favoris !</b>
-</p>
+<div class="card">
+  <h2>{{myProduct.title | uppercase}}</h2>
+  <select *ngIf="myProduct.sizes" (change)="changePrice($event)">
+    <option *ngFor="let size of myProduct.sizes" [value]="size.price">{{ size.size }} </option>
+  </select>
+  <img width="300" src={{myProduct.imageUrl}}>
+  <p>{{myProduct.description}}</p>
+  <p>{{selected | currency:'EUR'}} Date: {{myProduct.dateAdded | date:'fullDate' }}</p>
+  <b [ngStyle]="{ color: myProduct.isLiked ? 'red' : 'black' }">{{myProduct.likes}} ♥ </b>
+  <button (click)="onAddLike()">Like</button>
+  <button *ngIf="!myProduct.isFavorite" (click)="onAddFavori()">Ajouter au favoris
+  </button>
+  <button *ngIf="myProduct.isFavorite" (click)="onAddFavori()">Enlever des favori</button>
+  <p>
+    <b *ngIf="myProduct.isFavorite">Ce produit est dans tes favoris !</b>
+  </p>
+</div>
